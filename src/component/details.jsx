@@ -50,14 +50,14 @@ export default function Details() {
             <>
               <div className="rounded-lg shadow-lg p-8 bg-white">
                 <div className="flex justify-between">
-                  <div className="w-2/3">
+                  <div className="md:w-2/3 sm:w-full">
                     <p className='my-2 font-semibold text-4xl text-rose-700'><span className=''>{getdata[0].show.name}</span></p>
                     <p className='my-2 text-xl'>Status: <span className='font-bold'>{getdata[0].show.status}</span></p>
                     <p className='text-2xl py-2'>Summary in details</p>
                     <div className="Container" dangerouslySetInnerHTML={{ __html: getdata[0].show.summary }}></div>
                   </div>
-                  <div className="w-1/3">
-                    <img className="object-cover m-auto w-full rounded-lg md:w-48 md:rounded-lg hover:scale-110 duration-1000 cursor-pointer ease-in-out" style={{ "height": "inherit" }} src={getdata[0].show.image.original} alt="" />
+                  <div className="w-1/3 md:block sm:hidden">
+                    <img className=" object-cover m-auto w-full rounded-lg md:w-48 md:rounded-lg hover:scale-110 duration-1000 cursor-pointer ease-in-out" style={{ "height": "inherit" }} src={getdata[0].show.image.original} alt="" />
                   </div>
                 </div>
                 <Link to="/" className="mr-4 mt-8 hover:shadow-lg duration-500 ease-in-out w-fit inline-flex items-center py-2 px-3 text-lg font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
@@ -77,8 +77,8 @@ export default function Details() {
 
       {/* model start here */}
 
-      <div id="defaultModal" tabIndex="-1" aria-hidden="true" className={`${model} bg-gray-800/75 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full`}>
-        <div className="relative p-4 w-full max-w-2xl h-full md:h-auto m-auto">
+      <div id="defaultModal" tabIndex="-1" aria-hidden="true" className={`${model} bg-gray-800/75 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-screen`}>
+        <div className="relative p-4 w-full max-w-2xl h-screen md:h-auto m-auto">
           <form onSubmit={SubmitData}>
             <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
               <div className="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
